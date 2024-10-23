@@ -6,19 +6,9 @@ import Body from "./components/Body.js"
 
 
 
-
-
-
-
-
-
-
-
-
-
 const AppLayout = () =>{
 
-    console.log(<Body />)
+   
     return (
 
         <div  className="app"> 

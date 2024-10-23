@@ -8,8 +8,15 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import TextField from '@mui/material/TextField';
+import { useState } from "react";
+
 
 const Header = () =>{
+
+    // let btnName = "Login"
+
+    const [btnNameReact ,setBtnNameReact] = useState("Login")
     return (
 
         <div className="header">
@@ -49,10 +56,17 @@ const Header = () =>{
                     <Button color="inherit">Cart </Button>
                     <Button color="inherit">About us</Button>
                     <Button color="inherit">Contact</Button>
+                    <Button color="inherit"
+                            onClick={() =>{
+                                btnNameReact==="LogOut" ? setBtnNameReact("Login") : setBtnNameReact("LogOut");
+                            }}
+                        >
+                            {btnNameReact}
+                    </Button>
                 </Toolbar>
             </AppBar> 
         </Box>
-
+        
         </div>
     );
 };

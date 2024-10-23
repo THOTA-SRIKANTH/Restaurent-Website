@@ -7,12 +7,13 @@ const RestaurentCard = (props) =>{
 
     const {
         name,
-        cuisines,
-        costForTwo, 
-        deliveryTime ,
-        avgRating
-    } = resData?.data
-  
+        category,
+        price
+    } = resData?.card.card.info
+
+    const {costForTwo , avgRating } = resData?.card.card.restaurant.info
+
+    const {deliveryTime} = resData?.card.card.restaurant.info.sla
 
     return (
         <div className="res-card" style={{backgroundColor : "#f0f0f0"}}>
@@ -22,14 +23,16 @@ const RestaurentCard = (props) =>{
                 alt="res-logo"
             />
             <h3>{name}</h3>
-            <h4>{cuisines.join(',')}</h4>
-            <h4>{costForTwo/100 } FOR TWO</h4>
-            <h4>{deliveryTime} minutes</h4>
-            <h4>{avgRating} stars</h4>
+            <h4>{category}</h4>
+            <h4>{price} FOR TWO</h4>
+             <h4>${costForTwo/10000}for two</h4>
+            <h4>{avgRating} stars</h4> 
+            <h4>deliveryTime:{deliveryTime}</h4>
         </div>
         
     ); 
 };
+
 
 
 export default RestaurentCard;
