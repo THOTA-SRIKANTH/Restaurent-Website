@@ -34,15 +34,26 @@
     flex-wrap:wrap;
     justify-content: center;
 }
-.res-card{
+/*.res-card{
     
-    /* border: 2px solid black; */
+     border: 2px solid black; 
     margin: 5px;
     /* width: 200px; */
-    width: calc(15% - 10px); 
+    /* width: calc(15% - 10px);  */
     /* height: 350px; */
+    /* border-radius: 5px; */
+    /* padding: 5px;     */
+
+
+
+.res-card {
+    background-color: #f0f0f0;
     border-radius: 5px;
-    padding: 5px;    
+    padding: 5px;
+    /* width: 100%; Full width of the .restaurent-link */
+    height: auto;
+    transition: border 0.3s; /* Smooth hover effect */
+    margin: 5px;
 }
 
  
@@ -50,6 +61,7 @@
     border: 2px solid black;
    cursor: pointer; 
 }
+
 
 
 
@@ -96,4 +108,21 @@
     background-color:#f0f0f0;
     margin: 20px;
    
+
+
   }
+
+
+  .restaurent-link {
+    display: inline-block; /* Keeps the link confined to the card's area */
+    width: calc(15% - 10px); /* Match the width of the .res-card */
+    margin: 5px; /* Match the margin of the .res-card */
+    color: inherit;
+}
+
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px;
+}

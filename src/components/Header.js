@@ -9,15 +9,23 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import TextField from '@mui/material/TextField';
-import { useState } from "react";
+import { useState ,useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const Header = () =>{
 
     // let btnName = "Login"
 
-    const [btnNameReact ,setBtnNameReact] = useState("Login")
-    return (
+    // console.log("header renderd");
+    const [btnNameReact ,setBtnNameReact] = useState("Login");
+
+    useEffect(() =>{
+        // console.log("useEffect  called");
+    } ,[btnNameReact]);
+
+    
+    return (    
 
         <div className="header">
             {/* <div className="logo-container">
@@ -49,13 +57,33 @@ const Header = () =>{
                     <div className="logo-container">
                         <img className="logo" src={LOGO_URL}/>
                     </div>
+
+
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         {/**this empty box */}
                     </Typography>
-                    <Button color="inherit">Home</Button>
-                    <Button color="inherit">Cart </Button>
-                    <Button color="inherit">About us</Button>
-                    <Button color="inherit">Contact</Button>
+
+
+                    <Link to="/" style={{textDecoration:"none" , color:"inherit "}}>
+                        <Button color="inherit">Home</Button>
+                    </Link>
+                    
+                   <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Button color="inherit">Cart </Button>
+                   </Link>
+                    
+
+
+                    <Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Button color="inherit">About us</Button>
+                    </Link>
+
+        
+                    <Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Button color="inherit">Contact us</Button>
+                    </Link>
+                   
+                    
                     <Button color="inherit"
                             onClick={() =>{
                                 btnNameReact==="LogOut" ? setBtnNameReact("Login") : setBtnNameReact("LogOut");
